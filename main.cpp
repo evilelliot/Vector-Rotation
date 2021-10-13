@@ -1,3 +1,10 @@
+/**
+ * @file main.cpp
+ *
+ * @author Alberto Ocaranza
+ * Contact: alt.ocaranza@gmail.com
+ *
+ */
 #include "include/Helpers.hpp"
 #include "include/Template.hpp"
 #include "include/Tokenizer.hpp"
@@ -39,6 +46,8 @@ int main(int argc, char* argv[]){
             }else{
                 cout << "See -h translation for more information" << endl;
             }
+        }else if(Helpers::parse(arguments[0], "Pito")){
+            cout << "Pito" << endl;
         }
     }
     return 0;

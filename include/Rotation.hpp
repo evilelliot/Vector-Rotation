@@ -1,3 +1,10 @@
+/**
+ * @file Rotation.hpp
+ *
+ * @author Alberto Ocaranza
+ * Contact: alt.ocaranza@gmail.com
+ *
+ */
 #ifndef Rotation_hpp
 #define Rotation_hpp
 

@@ -1,3 +1,10 @@
+/**
+ * @file Helpers.cpp
+ *
+ * @author Alberto Ocaranza
+ * Contact: alt.ocaranza@gmail.com
+ *
+ */
 #include "../include/Helpers.hpp"
 #include <vector>
 #include <string>
@@ -27,4 +34,8 @@ string Helpers::toLowercase(string data){
         ch = tolower(ch);
     });
     return data;
+}
+
+float Helpers::degRad(float degree){
+    return degree * M_PI / 180;
 }

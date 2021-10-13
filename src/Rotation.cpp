@@ -1,15 +1,32 @@
+/**
+ * @file Rotation.cpp
+ *
+ * @author Alberto Ocaranza
+ * Contact: alt.ocaranza@gmail.com
+ *
+ */
 #include "../include/Rotation.hpp"
+#include "../include/Helpers.hpp"
 #include <math.h>
 #include <vector>
 #include <iostream>
 using namespace std;
 
 void Rotation::Rotate2D(vector<float> v, vector<float> a){
+    float _x = 0, _y = 0, x, y, c = 0, s = 0, rad = 0;
     if(v.size() == 2 && a.size() == 1){
-        float _x = (v[0] * cos(a[0])) - (v[1] * sin(a[0]));
-        float _y = (v[0] * sin(a[0])) - (v[1] * cos(a[0]));  
-        cout << "R= (" << _x << "," << _y << ")" << endl;    
+        rad = Helpers::degRad(a[0]);
+        c   = cos(rad);   s = sin(rad);
+        x   = v[0];       y = v[1];
+        if(rad < 0){
+            _x  = x *  c - y * s;
+            _y  = x * -s - y * c;
+        }
+        _x  = x * c - y * s;
+        _y  = x * s - y * c;  
+        cout << "R= (" << ceil(_x) << "," << ceil(_y) << ")" << endl;    
     }else{
         cout << "Invalid vector" << endl;
     }
 }
+
