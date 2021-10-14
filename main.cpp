@@ -9,6 +9,7 @@
 #include "include/Template.hpp"
 #include "include/Tokenizer.hpp"
 #include "include/Rotation.hpp"
+#include "include/Translation.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -40,14 +41,13 @@ int main(int argc, char* argv[]){
             }
         }else if(Helpers::parse(arguments[0], "Translate")){
             if(arguments.size() == 3){
+                vector<float> v = tks.numbers(arguments[1]);
+                vector<float> t = tks.numbers(arguments[2]);
                 
-                cout << arguments[1] << endl;
-                cout << arguments[2] << endl;
+                Translation::Translate2D(v,t);
             }else{
                 cout << "See -h translation for more information" << endl;
             }
-        }else if(Helpers::parse(arguments[0], "Pito")){
-            cout << "Pito" << endl;
         }
     }
     return 0;

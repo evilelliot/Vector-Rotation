@@ -11,8 +11,7 @@
 #include <sstream>
 #include <algorithm>
 using namespace std;
-
-
+// Char array to string vector
 vector<string> Helpers::artos(char* data[], int argc){
     // Convert arg char to string
     vector<string> argList;
@@ -21,21 +20,21 @@ vector<string> Helpers::artos(char* data[], int argc){
     }
     return argList;
 }
-
+// Parse commands easily
 bool Helpers::parse(string arg, string command){
     arg = toLowercase(arg);
     command = toLowercase(command);
     char fchar = command[0];
     return arg == command || arg == "-" + string(1, fchar);
 }
-
+// Convert string to lowercase
 string Helpers::toLowercase(string data){
     for_each(data.begin(), data.end(), [](char & ch) {
         ch = tolower(ch);
     });
     return data;
 }
-
+// Convert degrees to radians
 float Helpers::degRad(float degree){
     return degree * M_PI / 180;
 }

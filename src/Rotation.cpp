@@ -18,13 +18,11 @@ void Rotation::Rotate2D(vector<float> v, vector<float> a){
         rad = Helpers::degRad(a[0]);
         c   = cos(rad);   s = sin(rad);
         x   = v[0];       y = v[1];
-        if(rad < 0){
-            _x  = x *  c - y * s;
-            _y  = x * -s - y * c;
-        }
-        _x  = x * c - y * s;
-        _y  = x * s - y * c;  
-        cout << "R= (" << ceil(_x) << "," << ceil(_y) << ")" << endl;    
+
+        _x = 0 + cos(rad) * (x - 0) - sin(rad) * (y - 0);
+        _y = 0 + sin(rad) * (x - 0) + cos(rad) * (y - 0);
+
+        cout << "R= (" << _x << "," << _y << ")" << endl;    
     }else{
         cout << "Invalid vector" << endl;
     }
